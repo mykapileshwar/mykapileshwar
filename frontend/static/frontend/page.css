@@ -1,0 +1,70 @@
+body{
+    margin-top: 80px !important;
+}
+/* bhaugolic */
+.b-img{
+    margin-top: 10px !important;
+}
+div .Bhaugolic-title{
+    text-align: center;
+    color: rgb(226, 152, 14);
+    font-weight: bolder;
+    font-size: 30px;
+}
+div .Bhaugolic-info{
+    text-align: justify;
+    color: #ffffff;
+    font-size: 20px;
+}
+.Bhaugolic-body{
+    background-color: rgba(70, 69, 69, 0.7);
+    box-shadow: 0px 0px 15px  rgb(202, 78, 154);
+}
+div .Bhaugolic-info #more {
+    display: none;
+}
+#map-link:hover{
+    cursor: url("/Selected/drop\ icon.png"), auto !important;
+}
+/* dharmik */
+.card-group .card{
+    border-radius: 20px !important;
+    box-shadow: 0px 0px 20px  rgb(96, 165, 156);
+    background-color: rgb(55, 64, 65);
+} 
+.card-group .card img{
+    border-radius: 20px !important;
+    padding: 4px;
+} 
+.d-card{
+    padding: 20px 10px;
+}
+.dharmik-title{
+    font-weight: bolder;
+    color: #ffa631;
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 0px 4px 2px#411212;
+}
+.dharmik-info{
+    font-weight:400;
+    color: aqua;
+    text-align: justify;
+}
+.modal-btn{
+    background-color: rgb(106, 134, 134);
+    width: 100%;
+    border-radius: 20px;
+}
+.modal-body{
+    background-color: #0e0d0d;
+}
+.modal-footer{
+    background-color: #0e0d0d;
+    border: 0;
+}
+.dharmik-caro img{
+    height: 100%;
+    width:max-content;
+}
+/* paryatan */

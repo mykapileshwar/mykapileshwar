@@ -1,0 +1,46 @@
+{% extends "frontend/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+  <!-- Bhaugolic card -->
+  <div class="card mb-3 p-5 m-3  Bhaugolic-body" style="max-width: 100%; border-radius: 30px;">
+    <div class="row g-0">
+      <div class="col-md-6 ">
+        <!-- <img src="../top view.jpg " id="bhaugolic-img" class="img-fluid rounded-start"  style="border-radius: 20px; margin-top: 30px;" alt="Village top view"> -->
+        <div id="carouselExampleIndicators" class="carousel slide b-img" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="{% static 'images/Kapileshwar.jpg' %}" alt="village top view">
+            </div>
+            <div class="carousel-item">
+              <a href="https://goo.gl/maps/6PxpHtKpbcsX2Jbi6" id="map-link" target="blank"><img class="d-block w-100" src="{% static 'images/map.png' %}" alt="village map"></a>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title Bhaugolic-title">गावाची भौगोलिक माहिती</h5>
+          <p class="card-text Bhaugolic-info" style="width: 100%;">&emsp;&emsp;&emsp;कपिलेश्वर गाव गारगोटी-कोल्हापूर रोड वरील प्रसिद्ध तुरंबेचा गणपती येथून ३ कि.मी. अंतरावर वसलेले आहे.गावचे एकूण क्षेत्रफळ ४६० हेक्टर ५०.९० आर् आहे त्यापै`की पिकाखालील क्षेत्र ४०४ हेक्टर ०८.२० आर् आहे (एकूण गट संख्या १७५२). <br> &emsp;&emsp;&emsp;प्रमुख जिल्हा मार्ग 44 गावाच्या मधून पूर्व-पश्चिम दिशेने राधानगरी या तालुक्याच्या ठिकाणी गेलेला आहे. 
+            गावच्या गल्यांची रचना स्थापत्य कलेचा एक अजोड नमुनाच म्हणता येईल. दक्षिणेकडे वाहत असलेल्या दूधगंगा नदीच्या घाटापासून  उत्तरेला भैरी कड्याकडे जाणारा मुख्य रस्ता  असून याच रस्त्याला पूर्व-पश्चिम असे गल्लींचे फाटे आहेत.यामुळे गावात ठीक-ठिकाणी चौकांची निर्मिती झाली आहे. गावच्या मधोमध तलाव असून तलावाच्या काठी दत्त मंदीर, व मुख्य सार्वजनिक चौक व सार्वजनिक व्यासपीठ आहे. जेथे गावातील सांस्कृतिक कार्यक्रम पार पडतात. दत्त मंदिरासमोर अंगणवाडी पासून ते 7 वी पर्यंतची iso मानांकीत जिल्हा परिषदची शाळा आहे.<span id="dots">...</span><span id="more">  
+            व प्राथमिक शाळेच्या मागील बाजूस 8 ते 12 वी पर्यंतची  शिक्षणसंस्था आहे. मुख्य चौकाच्या परिसरामध्ये ग्रामपंचायत कपिलेश्वर व सर्व दूध व्यावसायिक संस्था व सोसायटी, पतसंस्था, व बाजारपेठ आहे. यामध्ये किराणमाल, पानपट्टी, स्टेशनरी, कापड दुकानं, सोनारकाम, परीट, फर्निचर अशी विविध व्यावसायिक दुकाने आहेत.</span>
+            </p>
+            <button onclick="myFunction()" id="myBtn" type="button" class="btn btn-dark">Read more</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

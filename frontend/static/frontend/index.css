@@ -1,0 +1,80 @@
+/* body{
+
+    background-color: #b4b2b2 !important;
+    background-image:url();
+} */
+/* body, html, #wrapper {
+    width: 100%;
+} */
+body {
+    /* background-image: url("E:\Kapileshwar\sources\Screenshot (137).png"); */
+    /* background-image: url("https://source.unsplash.com/1600x900/?landscape"); */
+    /* background-image: url("./sources/GRAMPANCHAYAT.jpg"); */
+    background-image: linear-gradient(to bottom right,rgb(0, 0, 0) ,rgb(156, 154, 154), rgb(0, 0, 0));
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+    background-size: cover;
+  }
+
+.mainInfo 
+{
+    padding: 10px 20px; 
+    background-color: rgba(70, 69, 69, 0.8);
+    box-shadow: 0px 0px 15px  rgb(35, 185, 140);
+    border-radius: 20px;
+    margin: 10px;
+    font-weight: bolder;
+    text-align: justify;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.8;
+}  
+.carousel-h{
+    margin-top: 80px !important;
+    
+}
+#carouselExampleIndicators img{
+    border-radius: 30px;
+    height: 90vh;
+}
+nav{
+    border-bottom: 2px solid rgb(216, 214, 214);
+}
+
+nav div li{
+    background-color: #5c5858;
+    margin: 6px;
+    margin: 6px 10px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bolder;
+}
+nav div li:hover{
+    box-shadow: 0px 2px 2px red;
+    text-decoration: underline;
+}
+nav .dropdown-menu a:hover{
+    box-shadow: 0px 2px 2px red;
+    text-decoration: underline;
+    background-color: #969090;
+    
+}
+
+nav .smallscreen{
+    color: aquamarine !important;
+    margin: auto ;
+    font-size: 20px;
+}
+nav .active{
+    box-shadow: 0px 2px 3px rgb(0, 255, 128);
+    text-decoration: underline;
+
+}
+nav ul .active .nav-link{
+    color: aqua !important;
+}
+footer .bi{
+    font-size: 30px;
+    color: aqua; 
+}

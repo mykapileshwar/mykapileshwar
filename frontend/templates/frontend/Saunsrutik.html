@@ -1,0 +1,61 @@
+{% extends "frontend/layout.html" %}
+
+{% load static %}
+{% block custom_styles %}
+  <style>
+    .container-fluid .Saunsrutik .card {
+      margin: 10px;
+    }
+    .container-fluid .Saunsrutik .card-text {
+      text-align: justify;
+    }
+
+  </style>
+{% endblock %}
+
+{% block body %}
+  <div class="container-fluid">
+    <div class="row Saunsrutik justify-content-center">
+      <div class="card" style="max-width: 100vh;">
+        <img src="{% static 'images/Balumama4.jpeg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">&emsp;&emsp;&emsp;गावामध्ये श्री विठ्ठल मंदीर, संत गोरोबा काका जयंती, श्री दत्त जयंती असे तीन सप्ताह मोठ्या
+            उत्साहात साजरे केले जातात.
+            संत बाळूमामा मंदिराच्या वतीने प्रत्येक अमावस्येला महाप्रसादाचे आयोजन असते.
+          </p>
+        </div>
+      </div>
+      <div class="card" style="max-width: 100vh;">
+        <img src="{% static 'images/Ganeshv.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">&emsp;&emsp;&emsp;गावात सार्वजनिक गणेश उत्सव मोठ्या उत्साहात साजरा केला जातो यामध्ये छत्रपती शिवाजी तरुण
+            मंडळ, यंग इंडिया मंडळ,फुलबाग तालीम मंडळ , हनुमान तालीम मंडळ ,गुलबूस गल्ली मंडळ यांच्या वतीने सार्वजनिक
+            गणपतीची प्रतिष्ठापना केली जाते. या काळात वेगवेगळे सजीव देखावे, विविध महिलांच्या स्पर्धाहोतात. गावातील
+            सार्वजनिक विसर्जन एकत्र येऊन नदीकडे केले जाते.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row Saunsrutik justify-content-center">
+      <div class="card" style="max-width: 100vh;">
+        <img src="{% static 'images/Dasara.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">&emsp;&emsp;&emsp;श्री. एकवीरा देवी ही कपिलनाथांची बहीण मानली जाते,यामुळे विजयादशमी दसऱ्या दिवशी
+            कपिलनाथांची पालखी सोने घेवून प्रथम एकविरा देवीच्या मंदिरात आणली जाते , व प्रथम सोने एकविरेल वाहिले
+            जाते.दसऱ्यादिवशी हायस्कूल समोरील मैदानावर शिलंघणाचे सोने लुटण्याचा कार्यक्रम होतो. या वेळी सासनकाठी नाचवली
+            जाते. व यानंतर गावातील ग्रामस्थ एकमेकांस सोने देण्यास सुरुवात करतात. हा उत्सव मोठ्या आनंदात साजरा केला जातो.
+          </p>
+        </div>
+      </div>
+      <div class="card" style="max-width: 100vh;">
+        <img src="{% static 'images/Aazad hind1.jpeg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">&emsp;&emsp;&emsp;आझाद हिंद कला क्रिडा व सांस्कृतिक मंडळाच्या वतीने गेली २५ वर्षे हा पुरस्कार वितरण समारंभ
+            राष्ट्रसेवा, शिक्षण व समाजसेवा या तीन क्षेत्रात उल्लेखनीय कामगिरी केलेल्या नागरिकांना देण्यात येत असतो, या
+            वेळी वेगवेगळे सांस्कृतिक आणि खेळांच्या कार्यक्रमांचे आयोजन केलेले असते.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
