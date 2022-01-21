@@ -2,12 +2,6 @@
 
 {% load static %}
 {% block custom_styles %}
-<script>
-  $(window).on("load", function () {
-    console.log("window loaded");
-    $('#exampleModal').modal('show');
-  });
-</script>
   <style>
     .names {
       text-align: center;
@@ -141,9 +135,18 @@
           </ul>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
+{% endblock %}
+
+{% block script %}
+  <script>
+    document.addEventListener("DOMContentLoaded", ()=> {
+      console.log("loaded...")
+      $("#exampleModal").modal("show");
+    })
+  </script>
 {% endblock %}
