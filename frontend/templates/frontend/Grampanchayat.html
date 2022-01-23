@@ -123,15 +123,13 @@
         </div>
         <div class="modal-body">
           <ul class="list-group">
-            <li class="list-group-item list-group-item-primary"> ग्रामपंचायत करांची रक्कम मुदती पूर्व भरून सहकार्य
-              करावे. </li>
-            <li class="list-group-item list-group-item-secondary">स्थानिक जन्म-मृत्यूची नोंद 14 दिवसांच्या आत
-              ग्रामपंचायतीकडे करणे अनिवार्य आहे.</li>
-            <li class="list-group-item list-group-item-success"> आपले घर व परिसर स्वच्छ ठेवा, गटारी वाहत्या ठेवून आपले
-              कुटुंब आरोग्यसंपन्न ठेवा. </li>
-            <li class="list-group-item list-group-item-danger"> चला आपला गाव स्वच्छ ठेवूया संपूर्ण स्वच्छता अभियानात
-              सहभागी होऊया.</li>
-            <li class="list-group-item list-group-item-warning"> "विचार करा ऐक्याचा मार्ग कुटुंब कल्याणचा..!"</li>
+            {% for notice in notices %}
+            <li class="list-group-item list-group-item-primary"> {{ notice.notice_message }} 
+              {% if notice.has_attatchment %}
+              <a class="btn btn-sm btn-secondary" href="{% get_media_prefix %}{{ notice.attachment }}">अधिक माहितीसाठी येथे क्लिक करा</a>
+              {% endif %}
+            </li>
+            {% endfor %}
           </ul>
         </div>
         <div class="modal-footer">

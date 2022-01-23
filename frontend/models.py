@@ -14,7 +14,7 @@ class Notice(models.Model):
 
     def has_attatchment(self) -> bool:
         """Returns True if notice has an attachment otherwise returns False."""
-        return (self.attachment is not None)[ True : False ]
+        return (False, True)[self.attachment != ""]
 
     def __str__(self) -> str:
         super().__str__()
