@@ -1,5 +1,5 @@
 from django.utils.translation import gettext_lazy as _
-from frontend.models import Notice, Feedback
+from frontend.models import Feedback
 from django.forms import ModelForm, Textarea, TextInput
 
 
