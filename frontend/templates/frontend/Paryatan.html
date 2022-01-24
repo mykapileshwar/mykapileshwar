@@ -59,4 +59,15 @@
   </div>
 </div>  
 </div>
+
+  <!-- Load feedback form -->
+  {% include "frontend/feedback_form.html" with feedback_form=feedback_form %}
+  
+{% endblock %}
+
+{% block script %}
+<script>
+  const feedbackUrl = "{% url 'frontend:feedback' %}";
+</script>
+<script src="{% static 'frontend/send-feedback.js' %}"></script>
 {% endblock %}

@@ -123,3 +123,16 @@ MEDIA_URL = 'uploads/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email SMTP backend setup
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "testingapp1950@gmail.com"
+EMAIL_HOST_PASSWORD = "rflzhlpexwpyivaw"
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = "testingapp1950@gmail.com"
+# ssl_keyfile: EMAIL_SSL_KEYFILE
+# ssl_certfile: EMAIL_SSL_CERTFILE
