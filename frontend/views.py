@@ -2,13 +2,10 @@ import json
 from django.shortcuts import render
 from frontend.models import Feedback, Notice
 from frontend.forms import FeedbackForm
-from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseRedirect
+from django.http import JsonResponse, HttpResponseBadRequest
 from django.core.mail import send_mail, BadHeaderError
 
 from kapileshwar.settings import DEFAULT_FROM_EMAIL
-
-# Create your views here.
-
 
 def homepage(request):
     return render(request, "frontend/index.html")
