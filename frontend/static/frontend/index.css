@@ -78,3 +78,18 @@ footer .bi{
     font-size: 30px;
     color: aqua; 
 }
+
+#submit-feedback {
+    background-color: #5c5858;
+    margin: 6px;
+    margin: 6px 10px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bolder;
+}
+
+#submit-feedback:hover{
+    box-shadow: 0px 2px 2px red;
+    text-decoration: underline;
+}

@@ -17,15 +17,15 @@ def grampanchayat(request):
         "notices": notices,
         "feedback_form": FeedbackForm(initial={"about": "Grampanchayat"})
     }
-    return render(request, "frontend/Grampanchayat.html", context)
+    return render(request, "frontend/grampanchayat.html", context)
 
 
 def geographical(request):
-    return render(request, "frontend/Bhaugolic.html")
+    return render(request, "frontend/bhaugolic.html")
 
 
 def educational(request):
-    return render(request, "frontend/Shikshanvyavsay.html", {"feedback_form": FeedbackForm(initial={"about": "Education"})})
+    return render(request, "frontend/shikshanvyavsay.html", {"feedback_form": FeedbackForm(initial={"about": "Education"})})
 
 
 def religious(request):
@@ -33,11 +33,11 @@ def religious(request):
 
 
 def tourism(request):
-    return render(request, "frontend/Paryatan.html", {"feedback_form": FeedbackForm(initial={"about": "Educational"})})
+    return render(request, "frontend/paryatan.html", {"feedback_form": FeedbackForm(initial={"about": "Educational"})})
 
 
 def cultural(request):
-    return render(request, "frontend/Saunsrutik.html")
+    return render(request, "frontend/saunsrutik.html")
 
 
 def feedback(request):
@@ -71,3 +71,6 @@ def feedback(request):
         else:
             return HttpResponseBadRequest()
         return JsonResponse({"success": "Email sent successfully"})
+    
+    else:
+        return HttpResponseBadRequest()
