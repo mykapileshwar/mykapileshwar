@@ -5,13 +5,15 @@ from frontend.forms import FeedbackForm
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.core.mail import send_mail, BadHeaderError
 from django.contrib.auth.models import User, Group
+from django.views.decorators.http import require_http_methods
 
 from kapileshwar.settings import DEFAULT_FROM_EMAIL
 
+@require_http_methods(["GET"])
 def homepage(request):
     return render(request, "frontend/index.html")
 
-
+@require_http_methods(["GET"])
 def grampanchayat(request):
     notices = Notice.objects.all()
     context = {
@@ -20,27 +22,27 @@ def grampanchayat(request):
     }
     return render(request, "frontend/grampanchayat.html", context)
 
-
+@require_http_methods(["GET"])
 def geographical(request):
     return render(request, "frontend/bhaugolic.html")
 
-
+@require_http_methods(["GET"])
 def educational(request):
     return render(request, "frontend/shikshanvyavsay.html", {"feedback_form": FeedbackForm(initial={"about": "Education"})})
 
-
+@require_http_methods(["GET"])
 def religious(request):
     return render(request, "frontend/dharmik.html")
 
-
+@require_http_methods(["GET"])
 def tourism(request):
     return render(request, "frontend/paryatan.html", {"feedback_form": FeedbackForm(initial={"about": "Educational"})})
 
-
+@require_http_methods(["GET"])
 def cultural(request):
     return render(request, "frontend/saunsrutik.html")
 
-
+@require_http_methods(["POST"])
 def feedback(request):
     if request.method == "POST":
         form = FeedbackForm(json.loads(request.body))
