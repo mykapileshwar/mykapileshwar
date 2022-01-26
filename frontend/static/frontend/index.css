@@ -1,15 +1,4 @@
-/* body{
-
-    background-color: #b4b2b2 !important;
-    background-image:url();
-} */
-/* body, html, #wrapper {
-    width: 100%;
-} */
 body {
-    /* background-image: url("E:\Kapileshwar\sources\Screenshot (137).png"); */
-    /* background-image: url("https://source.unsplash.com/1600x900/?landscape"); */
-    /* background-image: url("./sources/GRAMPANCHAYAT.jpg"); */
     background-image: linear-gradient(to bottom right,rgb(0, 0, 0) ,rgb(156, 154, 154), rgb(0, 0, 0));
     background-repeat: no-repeat, repeat;
     background-color: #cccccc;

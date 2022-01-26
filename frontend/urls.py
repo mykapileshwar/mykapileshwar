@@ -13,4 +13,6 @@ urlpatterns = [
     path('tourism-information', views.tourism, name="tourism"),
     path('cultural-information', views.cultural, name="cultural"),
     path('feedback', views.feedback, name="feedback"),
-]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
