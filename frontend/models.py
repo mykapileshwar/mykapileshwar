@@ -31,6 +31,7 @@ class Feedback(models.Model):
     feedback_message = models.CharField(max_length=250)
     given_on = models.DateTimeField(auto_created=True, auto_now=True)
     given_by = models.CharField(max_length=40)
+    email = models.EmailField()
     about = models.CharField(max_length=14, choices=FEEDBACK_SECTIONS, default="Grampanchayat")
 
     def __str__(self) -> str:

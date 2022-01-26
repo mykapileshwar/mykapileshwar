@@ -51,7 +51,8 @@ def feedback(request):
             message = form.cleaned_data['feedback_message']
             about = form.cleaned_data['about']
             given_by = form.cleaned_data['given_by']
-            new_feedback = Feedback(feedback_message=message, given_by=given_by, about=about)
+            email = form.cleaned_data['email']
+            new_feedback = Feedback(feedback_message=message, given_by=given_by, about=about, email=email)
             new_feedback.save()
 
             # Get emails of users of relevant group
@@ -63,11 +64,12 @@ def feedback(request):
 
             # Create email
             subject = f"Feedback from {new_feedback.given_by} about {new_feedback.about}"
+            email_body = f"{new_feedback.feedback_message} \nProvided Contact Email: {new_feedback.email}"
 
             # Send feedback through email
             try:
                 print("sending email....")
-                send_mail(subject, message, from_email=DEFAULT_FROM_EMAIL, recipient_list=emails)
+                send_mail(subject=subject, message=email_body, from_email=DEFAULT_FROM_EMAIL, recipient_list=emails)
             except BadHeaderError:
                 return JsonResponse({"error": "Invalid header found."})
         else:
