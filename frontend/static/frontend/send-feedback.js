@@ -7,6 +7,8 @@ feedbackForm.addEventListener(("submit"), (event) => {
     const feedbackMessage = document.querySelector('textarea[name=feedback_message]').value;
     const email = document.querySelector('input[name=email]').value;
     const about = document.querySelector('input[name=about]').value;
+    const submitBtn = document.querySelector('#submit-feedback');
+    submitBtn.innerHTML = '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>';
 
     // Make POST request to backend
     fetch(feedbackUrl, {
@@ -26,6 +28,7 @@ feedbackForm.addEventListener(("submit"), (event) => {
     .then(response => {
         alert("Feedback sent successfully");
         // Reset fields
+        submitBtn.innerHTML = "Send";
         document.querySelector('[name=given_by]').value = "";
         document.querySelector('[name=feedback_message]').value = "";
     })

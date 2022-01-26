@@ -55,6 +55,18 @@
   </style>
 {% endblock %}
 
+{% block nav_items %}
+<div class="d-flex ml-auto">
+  <li class="nav-item">
+    <a class="nav-link" id="notice-board">सूचनाफलक</a>
+  </li>
+  </li>
+  <li class="nav-item">
+    <a href="/admin" class="nav-link">Login</a>
+  </li>
+</div>
+{% endblock %}
+
 {% block body %}
   <p class="info">&emsp;&emsp;&emsp;कपिलेश्वर ही ग्रामपंचायत कोल्हापुर लोकसभा व राधानगरी विधानसभा मतदार संघातील प्रमुख
     गाव आहे. गावची एकुण मतदार संख्या 2257 आहे. यामध्ये 1178 पुरुष व 1079 महिला मतदार आहेत
@@ -117,7 +129,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel" style="font-weight: 900;">नागरिकांना महत्वाच्या सुचना</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -148,6 +160,9 @@
   <script>
     document.addEventListener("DOMContentLoaded", ()=> {
       console.log("loaded...")
+      $("#exampleModal").modal("show");
+    })
+    document.getElementById("notice-board").addEventListener("click", () => {
       $("#exampleModal").modal("show");
     })
     const feedbackUrl = "{% url 'frontend:feedback' %}";
