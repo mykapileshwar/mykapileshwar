@@ -14,5 +14,9 @@ class NoticeAdmin(admin.ModelAdmin):
         return super().save_model(request, obj, form, change)
 
 
+class FeedbackAdmin(admin.ModelAdmin):
+    list_display = ('feedback_message', 'given_by', 'given_on')
+
+
 admin.site.register(Notice, NoticeAdmin)
-admin.site.register(Feedback)
+admin.site.register(Feedback, FeedbackAdmin)

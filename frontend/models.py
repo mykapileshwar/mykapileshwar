@@ -35,4 +35,4 @@ class Feedback(models.Model):
 
     def __str__(self) -> str:
         super().__str__()
-        return self.feedback_message[:15] + " given by " + self.given_by
+        return self.feedback_message[:30] + " given by " + self.given_by
