@@ -4,6 +4,7 @@ from frontend.models import Feedback, Notice
 from frontend.forms import FeedbackForm
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.core.mail import send_mail, BadHeaderError
+from django.contrib.auth.models import User, Group
 
 from kapileshwar.settings import DEFAULT_FROM_EMAIL
 
@@ -53,19 +54,20 @@ def feedback(request):
             new_feedback = Feedback(feedback_message=message, given_by=given_by, about=about)
             new_feedback.save()
 
+            # Get emails of users of relevant group
+            group = Group.objects.filter(name=new_feedback.about).first()
+            users = User.objects.filter(groups=group.id)
+            emails = []
+            for user in users:
+                emails.append(user.email)
+
             # Create email
             subject = f"Feedback from {new_feedback.given_by} about {new_feedback.about}"
-            if new_feedback.about in ["Grampanchayat", "Tourism"]:
-                recipient_list = ['akshaymusale5641@gmail.com']
-            elif new_feedback.about == "Education":
-                recipient_list = ['osgsmail19@gmail.com']
-            else:
-                return HttpResponseBadRequest()
 
             # Send feedback through email
             try:
                 print("sending email....")
-                send_mail(subject, message, from_email=DEFAULT_FROM_EMAIL, recipient_list=recipient_list)
+                send_mail(subject, message, from_email=DEFAULT_FROM_EMAIL, recipient_list=emails)
             except BadHeaderError:
                 return JsonResponse({"error": "Invalid header found."})
         else:
