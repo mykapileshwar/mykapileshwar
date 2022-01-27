@@ -1,1 +1,1 @@
-web:gunicorn kapileshwar.wsgi
+web: gunicorn kapileshwar.wsgi
