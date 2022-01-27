@@ -36,7 +36,7 @@ def religious(request):
 
 @require_http_methods(["GET"])
 def tourism(request):
-    return render(request, "frontend/paryatan.html", {"feedback_form": FeedbackForm(initial={"about": "Educational"})})
+    return render(request, "frontend/paryatan.html", {"feedback_form": FeedbackForm(initial={"about": "Tourism"})})
 
 @require_http_methods(["GET"])
 def cultural(request):
