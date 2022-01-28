@@ -138,7 +138,7 @@
             {% for notice in notices %}
             <li class="list-group-item list-group-item-primary"> {{ notice.notice_message }} 
               {% if notice.has_attatchment %}
-              <a class="btn btn-sm btn-secondary" href="{% get_media_prefix %}{{ notice.attachment }}">अधिक माहितीसाठी येथे क्लिक करा</a>
+              <a class="btn btn-sm btn-secondary" href="{{ notice.attachment.url }}">अधिक माहितीसाठी येथे क्लिक करा</a>
               {% endif %}
             </li>
             {% endfor %}

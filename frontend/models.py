@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 def user_directory_path(instance, filename):
     # file will be uploaded to uploads/user_<id>/<filename>
@@ -10,11 +11,11 @@ class Notice(models.Model):
     notice_message = models.CharField(max_length=200)
     issued_on = models.DateTimeField(auto_created=True, auto_now=True)
     issued_by = models.ForeignKey(User, on_delete=models.CASCADE)
-    attachment = models.FileField(blank=True, null=True, upload_to=user_directory_path)
+    attachment = CloudinaryField()
 
     def has_attatchment(self) -> bool:
         """Returns True if notice has an attachment otherwise returns False."""
-        return (False, True)[self.attachment != ""]
+        return (False, True)[self.attachment.url is not None]
 
     def __str__(self) -> str:
         super().__str__()
