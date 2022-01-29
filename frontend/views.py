@@ -2,10 +2,12 @@ import json
 from django.shortcuts import render
 from frontend.models import Feedback, Notice
 from frontend.forms import FeedbackForm
-from django.http import JsonResponse, HttpResponseBadRequest
+from django.http import JsonResponse, HttpResponseBadRequest, HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 from django.contrib.auth.models import User, Group
 from django.views.decorators.http import require_http_methods
+from django.views.decorators.csrf import csrf_exempt
+from django.core import serializers
 
 from kapileshwar.settings import DEFAULT_FROM_EMAIL
 
@@ -42,6 +44,12 @@ def tourism(request):
 def cultural(request):
     return render(request, "frontend/saunsrutik.html")
 
+@require_http_methods(["GET"])
+def notices(request):
+    notices = serializers.serialize("json", Notice.objects.all())
+    return HttpResponse(notices)
+
+@csrf_exempt
 @require_http_methods(["POST"])
 def feedback(request):
     if request.method == "POST":

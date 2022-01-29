@@ -12,6 +12,7 @@ urlpatterns = [
     path('religious-information', views.religious, name="religious"),
     path('tourism-information', views.tourism, name="tourism"),
     path('cultural-information', views.cultural, name="cultural"),
+    path('notices', views.notices, name="notice"),
     path('feedback', views.feedback, name="feedback"),
 ] 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
