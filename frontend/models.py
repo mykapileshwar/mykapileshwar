@@ -11,7 +11,7 @@ class Notice(models.Model):
     notice_message = models.CharField(max_length=200)
     issued_on = models.DateTimeField(auto_created=True, auto_now=True)
     issued_by = models.ForeignKey(User, on_delete=models.CASCADE)
-    attachment = CloudinaryField()
+    attachment = CloudinaryField(blank=True)
 
     def has_attatchment(self) -> bool:
         """Returns True if notice has an attachment otherwise returns False."""
