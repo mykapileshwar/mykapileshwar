@@ -72,6 +72,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://mykapileshwar.github.io",
+    "http://127.0.0.1:3500"
 ]
 
 ROOT_URLCONF = 'kapileshwar.urls'
