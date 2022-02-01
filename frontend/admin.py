@@ -2,6 +2,7 @@ from django.contrib import admin
 from frontend.models import *
 
 admin.site.site_header = "Kapileshwar Website Administration"
+admin.site.site_url = "https://mykapileshwar.github.io"
 
 # Register your models here.
 class NoticeAdmin(admin.ModelAdmin):
