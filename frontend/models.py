@@ -1,10 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-
-def user_directory_path(instance, filename):
-    # file will be uploaded to uploads/user_<id>/<filename>
-    return 'uploads/user_{0}/{1}'.format(instance.issued_by.id, filename)
+from cloudinary.api import delete_resources
 
 # Create your models here.
 class Notice(models.Model):
@@ -16,6 +13,18 @@ class Notice(models.Model):
     def has_attatchment(self) -> bool:
         """Returns True if notice has an attachment otherwise returns False."""
         return (False, True)[self.attachment.url is not None]
+
+    def serialized_notice(self):
+        return {
+            "notice_message":self.notice_message,
+            "attachment":self.attachment.url
+        }
+
+    def delete(self, *args, **kwargs):
+        print("deleting from cloudinary...")
+        response = delete_resources(public_ids=self.attachment)
+        print(response)
+        return super().delete(*args, **kwargs)
 
     def __str__(self) -> str:
         super().__str__()

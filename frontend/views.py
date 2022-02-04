@@ -1,20 +1,22 @@
 import json
 from frontend.models import Feedback, Notice
 from frontend.forms import FeedbackForm
-from django.http import JsonResponse, HttpResponseBadRequest, HttpResponse, HttpResponseNotAllowed
+from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseNotAllowed
 from django.core.mail import send_mail, BadHeaderError
 from django.contrib.auth.models import User, Group
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
-from django.core import serializers
 
 from kapileshwar.settings import DEFAULT_FROM_EMAIL
 
 
 @require_http_methods(["GET"])
 def notices(request):
-    notices = serializers.serialize("json", Notice.objects.all())
-    return HttpResponse(notices)
+    notices = Notice.objects.all()
+    serialized_notices = []
+    for notice in  notices:
+        serialized_notices.append(notice.serialized_notice())
+    return JsonResponse({"notices":serialized_notices})
 
 @csrf_exempt
 @require_http_methods(["POST"])
